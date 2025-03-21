@@ -1,0 +1,109 @@
+body {
+    font-family: sans-serif;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #7AB8DF, #CFE0EF); 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
+header {
+    background:  linear-gradient(135deg, #CFE0EF); 
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 20px;
+}
+
+header nav .user-profile img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.login-container .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-container .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.login-container .input-group input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container button {
+    background-color: #453E91;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-container .forgot-password {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.login-container .forgot-password:hover {
+    text-decoration: underline;
+}
