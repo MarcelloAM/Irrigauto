@@ -38,7 +38,7 @@ header nav a {
     margin-right: 20px;
 }
 
-header nav .user-profile img {
+header nav .foto-perfil img {
     height: 40px;
     border-radius: 50%;
 }
@@ -93,9 +93,7 @@ main {
     width: 100%;
 }
 
-.login-container button:hover {
-    background-color: #0056b3;
-}
+
 
 .login-container .forgot-password {
     display: block;
