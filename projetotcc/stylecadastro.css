@@ -89,8 +89,9 @@ main {
     border-radius: 4px;
 }
 
-.login-container button {
+.login-container a {
     background-color: #453E91;
+    text-decoration: none;
     color: white;
     padding: 12px 20px;
     border: none;
