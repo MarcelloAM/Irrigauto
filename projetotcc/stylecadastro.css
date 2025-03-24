@@ -99,14 +99,3 @@ main {
     font-size: 16px;
     width: 100%;
 }
-
-.login-container .esquecer-senha {
-    display: block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.login-container .esquecer-senha:hover {
-    text-decoration: underline;
-}
