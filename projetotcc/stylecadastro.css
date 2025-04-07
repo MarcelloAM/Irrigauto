@@ -1,3 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif,'Poppins';
+}
+
 body {
     font-family: sans-serif;
     font-size: larger;
@@ -11,27 +17,32 @@ body {
 
 header {
     background:  linear-gradient(135deg, #CFE0EF); 
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+header .nomeEmpresa{
+    padding: 0px 0px 2px 32px;
+    font-size: 32px;
+    text-align: center;
+}
 
-.header .logo {
+.menuHome{
+    font-size: 32px;
+    padding-right: 32px;
+}
+
+
+header .logo {
     display: flex;
     align-items: center;
 }
 
-header .logo img {
+.header .logo img {
     height: 40px;
     margin-right: 10px;
-}
-
-header .descricao{
-    padding: 0px 0px 2px 32px;
-    font-size: 32px;
-    text-align: justify;
 }
 
 header nav {
@@ -45,7 +56,7 @@ header nav a {
     margin-right: 20px;
 }
 
-header nav .foto-perfil img {
+.header nav .foto-perfil img {
     height: 40px;
     border-radius: 50%;
 }
@@ -57,7 +68,7 @@ main {
     align-items: center;
 }
 
-.login-container {
+.sighup-container {
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
@@ -66,30 +77,30 @@ main {
     text-align: center;
 }
 
-.login-container h1 {
+.sighup-container h1 {
     margin-bottom: 30px;
     color: #333;
 }
 
-.login-container .input-group {
+.sighup-container .input-group {
     margin-bottom: 20px;
     text-align: left;
 }
 
-.login-container .input-group label {
+.sighup-container .input-group label {
     display: block;
     margin-bottom: 5px;
     color: #555;
 }
 
-.login-container .input-group input {
+.sighup-container .input-group input {
     width: calc(100% - 22px);
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
-.login-container a {
+.sighup-container a {
     background-color: #453E91;
     text-decoration: none;
     color: white;
@@ -99,4 +110,30 @@ main {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+}
+.EnterAccount{
+    margin: 32px 0px 12px 0px;
+}
+
+.sighup-container .EnterAccount a {
+    background-color: #453E91;
+    text-decoration: none;
+    color: white;
+    /*padding: 12px 20px 12px;*/
+    margin: 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.sighup-container button {
+    background-color: #453E91;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
 }

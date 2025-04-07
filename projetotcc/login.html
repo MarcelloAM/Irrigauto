@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface de Monitoramento - Login</title>
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="./style/styleLogin.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo da Empresa"> 
+            <img src="./img/logo.png" alt="Logo da Empresa"> 
             <span class="nomeEmpresa">Interface de <br> Monitoramento</span>
         </div>
         <nav>
@@ -17,26 +17,87 @@
                 <a href="#">Home</a>
             </div>
             <div class="foto-perfil">
-                <img src="1.png" alt="Foto de Perfil"> 
+                <img src="./img/1.png" alt="Foto de Perfil"> 
             </div>
         </nav>
     </header>
     <main>
         <div class="login-container">
             <h1>Login</h1>
-            <form>
+            <form action="/login" method="POST">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
                     <label for="senha">Senha</label>
-                    <input type="senha" id="senha" name="senha" required>
+                    <input type="password" id="senha" name="senha" required>
                 </div>
-                <button type="submit">Entrar</button>
+                <div class="lineup-group">
+                    <div class="EnterAccount">
+                        <a href="indexGrafico.html"><button type="submit">Entrar</button></a>
+                    </div>
+                    <br>
+                    <div class="SighUpAccount">
+                        <a href="indexCadastro.html">Não tem uma conta?</a>
+                    </div>
+                    <br>
+                    <div class="LostPassword">
+                        <a href="indexOutraSenha.html">Esqueci minha senha</a>
+                    </div>
+                </div>
             </form>
-            <a href="#" class="forgot-password">Esqueceu a Senha?</a>
         </div>
     </main>
+
 </body>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+<script type="module">
+
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDhvmBNtIXa4RNaUKa931cShhaiThwVKdE",
+      authDomain: "irrigacaoautomatizada-35c19.firebaseapp.com",
+      databaseURL: "https://irrigacaoautomatizada-35c19-default-rtdb.firebaseio.com",
+      projectId: "irrigacaoautomatizada-35c19",
+      storageBucket: "irrigacaoautomatizada-35c19.firebasestorage.app",
+      messagingSenderId: "890032829410",
+      appId: "1:890032829410:web:cc60674dcc54cdb8263fbb",
+      measurementId: "G-B86QLF4MD8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const analytics = getAnalytics(app);
+
+
+
+    function loginComGoogle() {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+        const user = result.user;
+        console.log("Usuário logado:", user);
+        })
+        .catch((error) => {
+        console.error("Erro no login:", error);
+        });
+    }
+    import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+const db = getFirestore(app);
+
+  </script>
 </html>

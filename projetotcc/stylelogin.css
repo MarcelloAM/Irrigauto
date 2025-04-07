@@ -12,7 +12,7 @@ body {
     background: linear-gradient(135deg, #7AB8DF, #CFE0EF); 
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 header {
@@ -103,6 +103,45 @@ main {
 .login-container button {
     background-color: #453E91;
     color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+}
+
+
+
+.login-container .LostPassword {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+    
+
+.EnterAccount{
+    margin: 32px 0px 12px 0px;
+}
+
+.login-container .EnterAccount a {
+    background-color: #453E91;
+    text-decoration: none;
+    color: white;
+    /*padding: 12px 20px 12px;*/
+    margin: 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-container .SighUpAccount a {
+    background-color: #453E91;
+    text-decoration: none;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -111,19 +150,21 @@ main {
     width: 100%;
 }
 
+@media
+only screen and (max-width: 375px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
 
+    header .nomeEmpresa {
+        font-size: 24px;
+    }
 
-.login-container .forgot-password {
-    display: block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.login-container .forgot-password:hover {
-    text-decoration: underline;
-}
-
-button:hover{
-    background-color: #014a97;
+    header .menuHome {
+        font-size: 24px;
+    }
+    .palceholder{
+        width: 90%;
+    }
 }
