@@ -92,9 +92,29 @@ body {
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-
+    width: auto;
+    text-align: center;
+}
+.placeholder img{
+    height: 270px;
+}
+/*.grafico .resposivo{
+    max-width: 1080px;
+    width: 100%;
+    height: auto;
 }
 
+
+.resposivo img{
+    max-width: 1080px;   Máximo da largura da imagem 
+    width: 100%;
+    max-height: 500px;  Máximo da altura da imagem 
+    min-height: auto;       Mínimo da altura, por padrão “auto” 
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+*/
 
 .grau{
     padding: 40px 0px 40px 0px;

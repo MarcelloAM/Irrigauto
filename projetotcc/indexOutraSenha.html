@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Monitoramento - Cadastro</title>
-    <link rel="stylesheet" href="./style/styleCadastro.css">
+    <title>Interface de Monitoramento - Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="./img/logo.png" alt="Logo da Empresa"> 
+            <img src="logo.png" alt="Logo da Empresa"> 
             <span class="nomeEmpresa">Interface de <br> Monitoramento</span>
         </div>
         <nav>
@@ -17,26 +17,27 @@
                 <a href="#">Home</a>
             </div>
             <div class="foto-perfil">
-                <img src="./img/1.png" alt="Foto de Perfil"> 
+                <img src="1.png" alt="Foto de Perfil"> 
             </div>
         </nav>
     </header>
     <main>
-        <div class="sighup-container">
-            <h1>Cadastro</h1>
-            <form action="/cadastro" method="POST">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+        <div class="login-container">
+            <h1>Esqueceu Senha</h1>
+            <form action="/outrasenha" method="POST">
                 <div class="input-group">
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" required>
                 </div>
+                <div class="input-group">
+                    <label for="senha">Confirme a Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
                 <div class="lineup-group">
                     <div class="EnterAccount">
-                        <a href="indexLogin.html"><button type="submit">Cadastrar</button></a>
+                        <button type="submit">Enviar</button>
                     </div>
+                    <br>
                 </div>
             </form>
         </div>
