@@ -1,1 +1,4 @@
 This is our Professional Project for conclusion of our degree.
+
+The prototype uses and Arduino Uno as main controller, connected to sensors and actuators to monitor enviromental conditions
+and activate automatically a water pump. An ESP32 is used as a vizualization and connectivity interface, allowing the collected datas to be accessed remotely through a web page.
