@@ -104,8 +104,11 @@
   
   .link-cadastro {
     text-align: left;
-    font-size: 14px;
-    color: #e1b3d3;
-    text-decoration: none;
+    font-size: 16px;
+    color: #b7d9c5;
+  }
+
+  .login-cadastro a {
+    color: #4fd1c5;
   }
   
