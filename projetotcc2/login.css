@@ -14,18 +14,18 @@
   }
   
   .login-container {
+    background-color: #fefbea;
     width: 350px;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+    }
   
   .card-top {
-    background-color: #fefbea;
     padding: 30px;
     display: flex;
     justify-content: center;
-    
+    align-items: center; 
+    height: 120px; 
   }
   
   .logo-img {

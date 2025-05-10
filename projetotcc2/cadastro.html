@@ -5,33 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro</title>
   <link rel="stylesheet" href="cadastro.css"/>
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="card">
       <div class="header">
-        <span class="back">&#129120;</span>
+        <span class="seta">&#129120;</span>
         <h1 class="titulo-cadastro">Cadastro</h1>
       </div>
       <form>
-        <label for="primeiro-nome">Primeiro Nome</label>
+        <label>Primeiro Nome</label>
         <input type="text" id="primeiro-nome" placeholder="Insira seu nome." />
 
-        <label for="ultimo-nome">Último nome</label>
-        <input type="text" id="ultimo-nome" placeholder="Value" />
+        <label>Último nome</label>
+        <input type="text" id="ultimo-nome" placeholder="Insira seu último nome." />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Insira seu email." />
+        <label>Email</label>
+        <input type="email" id="email-cadastro" placeholder="Insira seu email." />
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Crie uma senha." />
+        <label>Senha</label>
+        <input type="password" id="senha-cadastro" placeholder="Crie uma senha." />
 
-        <label for="confirmar-senha">Confirmar senha</label>
+        <label>Confirmar senha</label>
         <input type="password" id="confirmar-senha" placeholder="Confirme a senha." />
 
         <button type="submit">Cadastrar</button>
       </form>
-      <p class="login-link">Possui uma conta? <a href="#">Entrar</a></p>
+      <p class="login-link">Possui uma conta? <a href="login.html">Entrar</a></p>
     </div>
   </div>  
 </body>
