@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!--fonteLetra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="conteiner">
+        <div id="header" class="box">
+            <div id="botaoMenu" onclick="toggleSidebar()" class="botaoheader"><span class="material-icons">menu</span></div>
+                <div class="userIcon"><img class="imgUser" src="user.png" alt="imgUser"></div>
+                <div class="textUser">
+                <a href="#" ><p>Marcelo <br> Manaus,Amazonas</p></a>
+            </div>
+        </div> <!--navi-->
+        <div>
+            <aside id="sidebar" class="box">
+                <div class="sidebarmenu">
+                    <div class="logo"> <!--irrigauto-->
+                        <img src="folhaSemFundo2.png" alt="icon" id="iconfolha">
+                        <h1>Irrigauto</h1>
+                        
+                    </div>
+                    <nav>  
+                        <div class="menudash">
+                            
+                            <ul>
+                                <li>
+                                    <a href="#" id="TelaAtual"><span class="material-icons">window</span>Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkEx"><span class="material-icons">water_drop</span>Umidade</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkEx"><span class="material-icons">device_thermostat</span>Temperatura</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkEx"><span class="material-icons">schedule</span>Histórico</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="logoff">
+                        
+                        <a href="#"><h1><span class="material-icons">login</span>Log Out</h1></a>
+                    </div>
+                </div>
+            </aside><!--sidebar-->
+        </div>
+        <main class="main">
+            <div id="grafTemp" class="box">
+                <div class="TempText"><h2>Temperatura <br> monday <br> 32 °C</h2></div>
+                    <div class="TempDonut">
+                            <canvas id="meuGraficoDeRosca"></canvas>
+                            <script src="chart.main.js"></script>
+                    </div>
+            </div>
+            <div id="grafUmid" class="box">
+                <div class="UmidText"><h2>Umidade <br> monday <br> 72 %</h2></div>
+                    <div class="UmidDonut">
+                            <canvas id="meuSegundoGraficoDeRosca"></canvas>
+                            <script src="chart.main2.js"></script>
+                    </div>
+            </div>
+            <div id="grafico" class="box">
+                <div class="UmidTempText">
+                    <h2>Analise de Umidade<br>e Temperatura</h2>
+                </div>
+                <div class="divBarra">
+                    <canvas id="meuGraficoDeBarras"></canvas>
+                    <script src="graph.js"></script>
+                </div>
+            </div>
+            <div id="Api" class="box">
+                <div class="regiao">
+                    <h1>Manaus</h1>
+                </div>
+                <div class="clima">
+                    <h2>32*C</h2>
+                </div>
+                <div class="imgClima">
+                    <div>
+                        <img class="nuvem" src="nuvens-e-sol.png" alt="nuvem">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
