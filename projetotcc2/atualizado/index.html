@@ -63,14 +63,15 @@
         </div>
         <main class="main">
             <div id="grafTemp" class="box">
-                <div class="TempText"><h2>Temperatura <br> monday <br> 35 °C</h2></div>
+                <div class="TempText"> <h2>Temperatura  monday  </h2>  <div id="temperatura-text"> <h2 id="saidaTemperatura"></h2> <h2>°C</h2></div></div>
+                
                     <div class="TempDonut">
                             <canvas id="meuGraficoDeRosca"></canvas>
                             <script src="chart.main.js"></script>
                     </div>
             </div>
             <div id="grafUmid" class="box">
-                <div class="UmidText"><h2>Umidade <br> monday <br> 72 %</h2></div>
+                <div class="UmidText"><h2>Umidade  monday</h2>  <div id="umidade-text"> <h2 id="saidaUmidade"></h2> <h2>%</h2></div></div>
                     <div class="UmidDonut">
                             <canvas id="meuSegundoGraficoDeRosca"></canvas>
                             <script src="chart.main2.js"></script>
@@ -101,7 +102,14 @@
         </main>
     </div>
 
+    
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-database-compat.js"></script>
+    
+    <script src="temperatura-box1.js"></script>
     <script src="script.js"></script>
+    
+    
 
 </body>
 </html>

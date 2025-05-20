@@ -190,8 +190,25 @@ body{
 
     .TempText{
         grid-area: TempText;
+        display: flex;
+        flex-flow: column nowrap;
         align-self: flex-start;
     }
+
+    #temperatura-text{
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: large;
+        justify-content: flex-start;
+    }
+
+    #umidade-text{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+
+
 
     .TempDonut{
         display: flex;
