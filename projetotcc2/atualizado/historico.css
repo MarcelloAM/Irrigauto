@@ -1,0 +1,261 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    list-style-type: none
+}
+
+p{
+    font-size: small;
+}
+
+a{
+    color: black;
+}
+
+:root{
+
+    --cor1: white;
+    --cor2: rgba(19, 51, 34, 1);
+    --cor3: rgb(83, 117, 58);
+    --cor4: rgb(139, 166, 152);
+}
+
+body{
+    background-color: var(--cor1);
+    height: 100dvb;
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    ;
+    height: 100dvb;
+}
+
+.main{
+    grid-area: main;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "historicoMain"
+    ;
+}
+
+#header{
+    display: flex;
+    grid-area: header;
+    border-radius: 0px;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.botaoheader{
+    display: flex;
+    margin: 20px;
+}
+
+#menuconteiner{
+    height: 40px;
+    width: 40px;
+    
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+.imgUser{
+    height: 40px;
+    width: 40px;
+}
+
+.headerBox{
+    
+}
+
+.sidebarmenu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    border-radius: 0px;
+    background-color: var(--cor2);
+    height: 100dvh;
+    width: 250px;
+}
+
+.sidebarmenu a, .sidebarmenu h1{
+    color: var(--cor1);
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+
+#iconfolha{
+    padding-right: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+.menudash {
+    display: flex;
+    justify-content: center;
+}
+
+.menudash li{
+    padding: 5px;
+}
+
+.material-icons{
+    padding-right: 5px;
+
+}
+
+#TelaAtual{
+    display: flex;
+    color: rgb(83, 117, 58);
+}
+
+.menudash .linkEx{
+    text-decoration: none;
+    color: rgb(139, 166, 152);
+    display: flex;
+}
+
+.menudash .linkEx:hover,#TelaAtual:hover{
+    color: white;
+}
+
+.logoff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    height: 100px;
+    border-top: 1px solid white;
+}
+
+.logoff .material-icons{
+    transform: translateY(4px)
+}
+
+.box{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#botaoMenu {
+    display: none;
+}
+
+/*comeco historico*/
+
+
+
+.historicoMain{
+    
+}
+
+    .historicoInfo{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "historicoInfoData historicoInfoHora historicoInfoStatus historicoInfoUmidade historicoInfoTemperatura" 
+        ;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+        padding: 10px;
+        margin: 10px;
+        color: var(--cor3);
+    }
+
+        .historicoInfoData{
+            grid-area: historicoInfoData;
+        }
+
+        .historicoInfoHora{
+            grid-area: historicoInfoHora;
+        }
+
+        .historicoInfoStatus{
+            grid-area: historicoInfoStatus;
+        }
+        .historicoInfoUmidade{
+            grid-area: historicoInfoUmidade;
+        }
+        .historicoInfoTemperatura{
+            grid-area: historicoInfoTemperatura;
+            
+        }
+
+    .historicoOrder{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "historicoInfoData historicoInfoHora historicoInfoStatus historicoInfoUmidade historicoInfoTemperatura" 
+        ;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+        padding: 10px;
+        margin: 10px;
+        color: var(--cor3);
+    }
+    
+
+/*fim historico*/
+
+@media (max-width: 1010px){
+
+    .sidebarmenu{
+        height: 100%;
+    }
+
+    aside{
+        position: fixed;
+        height: 100%;
+        width: 250px;
+        display: none;
+    }
+
+    .conteiner{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0px 60px 1fr;
+        grid-template-areas: 
+        "sidebar"
+        "header"
+        "main"
+        ;
+    }
+
+    .main{
+        grid-template: 
+        "historicoMain"
+    }
+
+    .show{
+        display: block;
+    }
+
+    #botaoMenu{
+        display: block;
+    }
+    
+}
