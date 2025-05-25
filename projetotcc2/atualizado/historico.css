@@ -257,13 +257,5 @@ body{
     #botaoMenu{
         display: block;
     }
-
-    .historicoOrder{
-        font-size: small;
-    }
-
-    .historicoInfo{
-        font-size: small;
-    }
     
 }
