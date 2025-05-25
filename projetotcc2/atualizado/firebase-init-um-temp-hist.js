@@ -44,3 +44,40 @@ refUmidade.on("value", (snapshot) => {
     // Exemplo de exibição no HTML
     document.getElementById("saidaUmidade").textContent = ultimoValor;
 });
+
+refHistorico.on("value", (snapshot) => {
+    const data = snapshot.val();
+    const numeros = Object.keys(data);
+    const ultimaChave = numeros[numeros.length -1];
+    const ultimoValor = data[ultimaChave];
+
+    console.log("Dados recuperados:", data);
+    
+    const partes = ultimoValor.split(' '); 
+    
+    // "Mensagem! DD/MM/YYYY HH:MM:SS"
+    const mensagemArray = [];
+    let dataString = '';
+    let horarioString = '';
+
+
+    for (let i = 0; i < partes.length; i++) {
+        if (partes[i].includes('/') && partes[i].length === 10) { // (DD/MM/YYYY)
+            dataString = partes[i];
+        } else if (partes[i].includes(':') && partes[i].length === 8) { //(HH:MM:SS)
+            horarioString = partes[i];
+        } else {
+            mensagemArray.push(partes[i]); 
+        }
+    }
+
+    const mensagem = mensagemArray.join(' '); 
+
+    
+    const cleanedMessage = mensagem.replace(dataString, '').replace(horarioString, '').trim();
+
+  
+    document.getElementById("historicoOrderStatus").textContent = cleanedMessage;
+    document.getElementById("historicoOrderData").textContent = dataString;
+    document.getElementById("historicoOrderHora").textContent = horarioString;
+});
