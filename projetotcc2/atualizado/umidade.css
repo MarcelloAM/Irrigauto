@@ -270,8 +270,9 @@ body{
 @media (max-width: 1300px) {
     .main{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 1fr auto;
+        grid-template-rows: 210px 210px 1fr auto;
         grid-template-areas: 
+        "texto texto"
         "grafTemp grafUmid"
         "grafico grafico"
         "Api Api"
@@ -297,8 +298,9 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-rows: repeat(4,240px) 500px;
         grid-template-areas: 
+        "texto"
         "grafTemp"
         "grafUmid"
         "grafico"

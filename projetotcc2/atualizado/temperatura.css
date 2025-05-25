@@ -101,6 +101,8 @@ body{
     justify-content: center;
     align-items: center;
     height: 100px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
 }
 
 #iconfolha{
@@ -144,6 +146,7 @@ body{
     align-items: center;
     margin-top: auto;
     height: 100px;
+    border-top: 1px solid white;
 }
 
 .logoff .material-icons{
@@ -267,8 +270,9 @@ body{
 @media (max-width: 1300px) {
     .main{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 1fr auto;
+        grid-template-rows: 210px 210px 1fr auto;
         grid-template-areas: 
+        "texto texto"
         "grafTemp grafUmid"
         "grafico grafico"
         "Api Api"
@@ -294,8 +298,9 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-rows: repeat(4,240px) 500px;
         grid-template-areas: 
+        "texto"
         "grafTemp"
         "grafUmid"
         "grafico"
