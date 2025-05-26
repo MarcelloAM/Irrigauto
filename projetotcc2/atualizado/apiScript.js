@@ -11,6 +11,9 @@ function colocarDadosNaTela(dados){
 
 }   
 
+const city = "manaus"
+buscarCidade(city)
+
 async function buscarCidade(city){
 
     const dados = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br&units=metric`).then( resposta => resposta.json())
