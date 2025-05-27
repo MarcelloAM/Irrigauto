@@ -257,7 +257,7 @@ body{
     background: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     padding: 20px;
-    width: 95%;
+    width: 90%; /*antes 95*/
     max-width: 450px;
 }
 
@@ -266,7 +266,7 @@ body{
     outline: none;
     padding: 10px;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 16px; /*antes 18px*/
     background-color: #7c7c7c2b;
     color: #ffffff;
     width: calc(100% -70px);
@@ -333,7 +333,7 @@ body{
 }
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1430px) { /*antes 1300px*/
     .main{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 210px 1fr auto;
