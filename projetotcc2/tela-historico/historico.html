@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historico</title>
     <link rel="stylesheet" href="historico.css">
-    <link rel="shortcut icon" type="image/jpg" href="folhaSemFundo2.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png"/>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -23,7 +23,7 @@
     <div class="conteiner">
         <div id="header" class="box">
             <div id="botaoMenu" onclick="toggleSidebar()" class="botaoheader"><span class="material-icons">menu</span></div>
-                <div class="userIcon"><img class="imgUser" src="user.png" alt="imgUser"></div>
+                <div class="userIcon"><img class="imgUser" src="../assets/user.png" alt="imgUser"></div>
                 <div class="textUser">
                 <a href="#" ><p>Calebe <br> Manaus,Amazonas</p></a>
             </div>
@@ -32,7 +32,7 @@
             <aside id="sidebar" class="box">
                 <div class="sidebarmenu">
                     <div class="logo"> <!--irrigauto-->
-                        <img src="folhaSemFundo2.png" alt="icon" id="iconfolha">
+                        <img src="../assets/folhaSemFundo2.png" alt="icon" id="iconfolha">
                         <h1>Irrigauto</h1>
                         
                     </div>
@@ -41,22 +41,22 @@
                             
                             <ul>
                                 <li>
-                                    <a href="index.html" class="linkEx"><span class="material-icons">window</span>Dashboard</a>
+                                    <a href="../dashboard/index.html" class="linkEx"><span class="material-icons">window</span>Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="umidade.html" class="linkEx"><span class="material-icons">water_drop</span>Umidade</a>
+                                    <a href="../tela-umidade/umidade.html" class="linkEx"><span class="material-icons">water_drop</span>Umidade</a>
                                 </li>
                                 <li>
-                                    <a href="temperatura.html" class="linkEx"><span class="material-icons">device_thermostat</span>Temperatura</a>
+                                    <a href="../tela-temperatura/temperatura.html" class="linkEx"><span class="material-icons">device_thermostat</span>Temperatura</a>
                                 </li>
                                 <li>
-                                    <a href="historico.html" id="TelaAtual"><span class="material-icons">schedule</span>Histórico</a>
+                                    <a href="../tela-historico/historico.html" id="TelaAtual"><span class="material-icons">schedule</span>Histórico</a>
                                 </li>
                             </ul>
                         </div>
                     </nav>
                     <div class="logoff">  
-                        <a href="../login.html"><h1><span class="material-icons">login</span>Log Out</h1></a>
+                        <a href="../Telas-Login-Cadastro/login.html"><h1><span class="material-icons">login</span>Log Out</h1></a>
                     </div>
                 </div>
             </aside><!--sidebar-->
@@ -98,8 +98,8 @@
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-database-compat.js"></script>
     
-    <script src="firebase-init-um-temp-hist.js"></script>
-    <script src="script.js"></script>
+    <script src="../scripts/firebase-init-um-temp-hist.js"></script>
+    <script src="../scripts/script.js"></script>
     
     
 
