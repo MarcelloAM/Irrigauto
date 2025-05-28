@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function login(email,senha){
     firebase.auth().signInWithEmailAndPassword(email,senha).then(response => {
-        window.location.href = "../projetotcc2/atualizado/index.html"; //tem que mudar essa referencia quando colocarem a tela principal no repositorio
+        window.location.href = "../atualizado/index.html"; //tem que mudar essa referencia quando colocarem a tela principal no repositorio
     }).catch(error => {
         alert(error.code)
         console.log('error',response)
