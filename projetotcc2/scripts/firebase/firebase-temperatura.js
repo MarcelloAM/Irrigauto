@@ -1,6 +1,5 @@
 import firebaseApp from './init/firebase-init.js';
 
-
 var db = firebase.database();
 var refTemperatura = db.ref("sensor/temperatura/");
 
@@ -48,3 +47,22 @@ refUltimasTemperaturas.on("value", (snapshot) => {
     }
     
 });
+
+
+const data = new Date();
+
+const dia = data.getDate();
+const mes = data.getMonth() + 1; 
+const ano = data.getFullYear();
+const hora = data.getHours();
+const minuto = data.getMinutes();
+const segundo = data.getSeconds();
+
+const diaFormatado = String(dia).padStart(2, '0');
+const mesFormatado = String(mes).padStart(2, '0');
+
+
+const dataAtual = diaFormatado + "/" + mesFormatado + "/" + ano;
+console.log(dataAtual);
+
+document.getElementById("dataHoje").textContent = "Média de Hoje: "+ dataAtual;
