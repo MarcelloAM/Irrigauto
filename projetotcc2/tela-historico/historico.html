@@ -73,23 +73,17 @@
                     <div class="historicoInfoUmidade">Umidade</div>
                     <div class="historicoInfoTemperatura">Temperatura</div>
                 </div>
-                <div class="historicoOrder">
-                    <div id="historicoOrderData" class="historicoOrderData"></div>
-                    <div id="historicoOrderHora" class="historicoOrderHora"></div>
-                    <div id="historicoOrderStatus" class="historicoOrderStatus"></div>
-                    <div id="saidaUmidade" class="saidaUmidade"></div>
-                    <div id="saidaTemperatura" class="saidaTemperatura"></div>
-                </div>
-
-                <!--
+                <template id="historico-item-template">
                     <div class="historicoOrder">
-                        <div class="historicoOrderData">21-04-2025</div>
-                        <div class="historicoOrderHora">14:30:40</div>
-                        <div class="historicoOrderStatus">Bomba ativada!</div>
-                        <div class="saidaUmidade">45%</div>
-                        <div class="saidaTemperatura">30*C</div>
+                        <div id="historicoOrderData" class="historicoOrderData"></div>
+                        <div id="historicoOrderHora" class="historicoOrderHora"></div>
+                        <div id="historicoOrderStatus" class="historicoOrderStatus"></div>
+                        <div id="saidaUmidade" class="saidaUmidade"></div>
+                        <div id="saidaTemperatura" class="saidaTemperatura"></div>
                     </div>
-                -->
+                </template>
+
+                <div id="lista-historico-container"></div>
             </div>
         </main>
     </div>

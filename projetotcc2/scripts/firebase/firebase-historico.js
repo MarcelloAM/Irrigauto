@@ -38,33 +38,62 @@ refUmidade.on("value", (snapshot) => {
 
 function parseValorHistorico(valorString) {
     const partes = valorString.split(' ');
-    const mensagemArray = [];
-    let dataString = '';
-    let horarioString = '';
 
-    for (let i = 0; i < partes.length; i++) {
-        if (partes[i].includes('/') && partes[i].length === 10) { // (DD/MM/YYYY)
-            dataString = partes[i];
-        } else if (partes[i].includes(':') && partes[i].length === 8) { //(HH:MM:SS)
-            horarioString = partes[i];
-        } else {
-            mensagemArray.push(partes[i]);
-        }
+    // Caso 1: Formato exato de 5 partes (Status Data Hora Umidade Temperatura)
+    if (partes.length === 5) {
+        const status = partes[0];
+        const dataString = partes[1];
+        const horarioString = partes[2];
+        const umidade = partes[3];
+        const temperatura = partes[4];
+
+        // Validação básica do formato da data e hora
+        const isValidDate = dataString && dataString.includes('/') && dataString.length === 10;
+        const isValidTime = horarioString && horarioString.includes(':') && horarioString.length === 8;
+
+        return {
+            data: isValidDate ? dataString : 'Data Inválida',
+            hora: isValidTime ? horarioString : 'Hora Inválida',
+            status: status || 'N/A',
+            umidade: umidade || '--',
+            temperatura: temperatura || '--'
+        };
+    } 
+    // Caso 2: Mais de 5 partes (Status com espaços, Data, Hora, Umidade, Temperatura)
+    else if (partes.length > 5) {
+        // As últimas 4 partes são Data, Hora, Umidade, Temperatura
+        const temperatura = partes[partes.length - 1];
+        const umidade = partes[partes.length - 2];
+        const horarioString = partes[partes.length - 3];
+        const dataString = partes[partes.length - 4];
+        // Todo o resto no início é o status
+        const status = partes.slice(0, partes.length - 4).join(' ');
+
+        const isValidDate = dataString && dataString.includes('/') && dataString.length === 10;
+        const isValidTime = horarioString && horarioString.includes(':') && horarioString.length === 8;
+
+        return {
+            data: isValidDate ? dataString : 'Data Inválida',
+            hora: isValidTime ? horarioString : 'Hora Inválida',
+            status: status || 'N/A',
+            umidade: umidade || '--',
+            temperatura: temperatura || '--'
+        };
+    } 
+    // Caso 3: Formato inesperado (poucas partes)
+    else {
+        console.warn("String de histórico com formato inesperado (partes insuficientes):", valorString);
+        return {
+            data: 'N/A',
+            hora: 'N/A',
+            status: `Formato Inválido (${valorString})`,
+            umidade: '--',
+            temperatura: '--'
+        };
     }
-    const mensagem = mensagemArray.join(' ');
-    const cleanedMessage = mensagem.replace(dataString, '').replace(horarioString, '').trim();
-
-    return {
-        data: dataString || 'N/A',
-        hora: horarioString || 'N/A',
-        status: cleanedMessage || 'N/A',
-        // Adicione aqui a lógica para umidade e temperatura se estiverem na string
-        // umidade: '...',
-        // temperatura: '...'
-    };
 }
 
-refHistorico.orderByKey().limitToLast(5).on("value", (snapshot) => {
+refHistorico.orderByKey().limitToLast(20).on("value", (snapshot) => {
     listaHistoricoContainer.innerHTML = ''; // Limpa o container antes de adicionar novos itens
 
     if (!snapshot.exists()) {
@@ -90,6 +119,8 @@ refHistorico.orderByKey().limitToLast(5).on("value", (snapshot) => {
         templateClone.querySelector(".historicoOrderData").textContent = dadosFormatados.data;
         templateClone.querySelector(".historicoOrderHora").textContent = dadosFormatados.hora;
         templateClone.querySelector(".historicoOrderStatus").textContent = dadosFormatados.status;
+        templateClone.querySelector(".saidaUmidade").textContent = dadosFormatados.umidade;
+        templateClone.querySelector(".saidaTemperatura").textContent = dadosFormatados.temperatura;
         
         // Para Umidade e Temperatura:
         // Se você tiver esses dados em 'dadosFormatados', pode preenchê-los aqui.
