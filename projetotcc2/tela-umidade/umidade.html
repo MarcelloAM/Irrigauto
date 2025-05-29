@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Umidade</title>
     <link rel="stylesheet" href="umidade.css">
     <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png"/>
 
@@ -67,61 +67,38 @@
                 <h4 id="dataHoje">Média de Hoje: Carregando...</h4> 
                 <h1 id="mediaUmidade"><strong>Carregando...</strong></h1>
             </div>
-            <div id="grafTemp" class="box">
-                <div class="TempText"> <h2>Temperatura  monday  </h2>  <div id="temperatura-text"> <h2 id="saidaTemperatura"></h2> <h2>°C</h2></div></div>
-                    <div class="TempDonut">
-                            <canvas id="meuGraficoDeRosca"></canvas>
-                            <script src="../dashboard/chart.main.js"></script>
-                    </div>
-            </div>
+            
             <div id="grafUmid" class="box">
-                <div class="UmidText"><h2>Umidade  monday</h2>  <div id="umidade-text"> <h2 id="saidaUmidade"></h2> <h2>%</h2></div></div>
+                <div class="UmidText"><h2>Umidade</h2><div id="umidade-text"><h2 id="saidaUmidade"></h2></div></div>
                     <div class="UmidDonut">
                             <canvas id="meuSegundoGraficoDeRosca"></canvas>
                             <script src="../dashboard/chart.main2.js"></script>
                     </div>
             </div>
             <div id="Api" class="box">
-                <div class="titulo">
-                    <h2>Histórico</h2>
-                </div>
-                <div class="dados box">
-                    <div class="linha-historico">
-                        <h3>Domingo</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Segunda</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Terça</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Quarta</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Quinta</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Sexta</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
-                    </div>
-                    <div class="linha-historico">
-                        <h3>Sábado</h3>
-                        <h3>50%</h3>
-                        <h3>20/05</h3>
+
+                <div class="weather-container">
+                    <div class="upper-box-city">
+                        <input class="input-city" placeholder="Digite o nome da cidade">
+                        <button class="button-search" onclick="clickButton()">
+                            <img class="img-search" src="https://www.svgrepo.com/show/488200/find.svg" alt="Search">
+                        </button>
+                        <div class="medium-box-city">
+                            <h2 class="city">Informe um dado</h2>
+
+                            <p class="city-temp">Temperatura: none</p>
+                            <p class="city-humidity">Umidade: none</p>
+
+                            <div class="lower-box-city"> <!--caixa menor-->
+                                <img class="img-weather" alt="icon-info-weather"
+                                    src="https://openweathermap.org/img/wn/04n.png">
+                                <p class="text-weather">none</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </main>
     </div>
@@ -134,7 +111,8 @@
     <script type="module" src="../scripts/firebase/firebase-umidade.js"></script>
     <script src="../scripts/script.js"></script>
     
-    
+    <!--apiweather-->
+    <script src="../dashboard/apiScript.js"></script>
 
 </body>
 </html>
