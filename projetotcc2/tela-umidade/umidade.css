@@ -47,7 +47,7 @@ body{
     grid-template-rows: 210px auto;
     grid-template-areas:
     "texto texto Api"
-    "grafTemp grafUmid Api"
+    "grafUmid grafTemp Api"
     
     ;
     gap: 20px 20px;
@@ -177,85 +177,6 @@ body{
         align-items: center;
     }
 
-#grafTemp{
-    grid-area: grafTemp;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    
-}
-
-    .TempText{
-        grid-area: TempText;
-        display: flex;
-        flex-flow: column nowrap;
-        align-self: flex-start;
-    }
-
-    #temperatura-text{
-        display: flex;
-        flex-flow: row nowrap;
-        font-size: large;
-        justify-content: flex-start;
-    }
-
-    #umidade-text{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-    }
-
-
-
-    .TempDonut{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        
-    }
-#Api{
-    grid-area: Api;
-    padding: 20px;
-    background-color: #133322;
-}
-#Api h2{
-    color: var(--cor1);
-}
-#Api .dados{
-    background-color: #133322;
-}
-#texto{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    grid-area: texto;
-}
-.linha-historico{
-    display: flex;
-    justify-content: space-between;
-    margin: 25px;
-    border-bottom: white 1px solid;
-    color: white;
-}
-.nuvem{
-    width: 300px;
-    height: 300px;
-}
-
-.imgClima{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 400px;
-}
-
 .box{
     background-color: white;
     border-radius: 20px;
@@ -265,16 +186,117 @@ body{
 #botaoMenu {
     display: none;
 }
+#Api{
+    grid-area: Api;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://picsum.photos/1920/1080');
+}
+
+/* start api weather */
 
 
-@media (max-width: 1300px) {
+.upper-box-city{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding: 20px;
+    width: 90%; /*antes 95*/
+    max-width: 450px;
+}
+
+.input-city{
+    
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px; /*antes 18px*/
+    background-color: #7c7c7c2b;
+    color: #ffffff;
+    width: calc(100% -70px);
+}
+
+.button-search{
+    display: flex; /*adicao do display flex*/
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #7c7c7c2b;
+    cursor: pointer;
+    float: right;
+}
+
+.img-search{
+    width: 20px;
+}
+
+.medium-box-city{
+    margin-top: 30px;
+}
+
+.city{
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.city-temp{
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.lower-box-city{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.text-weather{
+    color: #ffffff;
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+.city-humidity{
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* end api weather */
+
+ @media (max-width: 1440px) { /*adicao de outra media*/
+    .input-city{
+    font-size: 12px; 
+    }
+
+    .img-search{
+        width: 15px;
+    }
+
+    .city{
+        font-size: 20px;
+    }
+
+    .city-temp{
+    font-size: 15px;
+    }
+
+    .city-humidity{
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 1320px) { /*antes 1400px*/
     .main{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 210px 1fr auto;
+        grid-template-rows: 210px 1fr auto;
         grid-template-areas: 
         "texto texto"
-        "grafTemp grafUmid"
-        "grafico grafico"
+        "grafUmid grafUmid"
         "Api Api"
         ;
     }
@@ -298,14 +320,14 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,240px) 500px;
-        grid-template-areas: 
+        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-areas:
         "texto"
-        "grafTemp"
         "grafUmid"
-        "grafico"
+        "Api"
         "Api";
     }
+
     .TempDonut{
         align-items: flex-end;
         justify-content: end;
@@ -334,4 +356,5 @@ body{
     #botaoMenu{
         display: block;
     }
+    
  }
