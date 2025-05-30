@@ -43,12 +43,12 @@ body{
     grid-area: main;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 210px 210px auto;
     grid-template-areas:
     "texto texto Api"
-    "grafUmid . Api"
-    ". . Api"
+    "grafUmid grafUmid2 Api"
+    "grafUmid3 grafUmid4 Api"
     
     ;
     gap: 20px 20px;
@@ -70,8 +70,7 @@ body{
 
 #menuconteiner{
     height: 40px;
-    width: 40px;
-    
+    width: 40px;   
     border-radius: 50%;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
 }
@@ -153,8 +152,14 @@ body{
 .logoff .material-icons{
     transform: translateY(4px)
 }
-
-
+#texto{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    grid-area: texto;
+}
+/* start dos sensores */
 #grafUmid{
     grid-area: grafUmid;
     display: flex;
@@ -178,6 +183,34 @@ body{
         align-items: center;
     }
 
+#grafUmid2{
+    grid-area: grafUmid2;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#grafUmid3{
+    grid-area: grafUmid3;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#grafUmid4{
+    grid-area: grafUmid4;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+ /* end dos sensores */
 .box{
     background-color: white;
     border-radius: 20px;
@@ -294,11 +327,14 @@ body{
 @media (max-width: 1320px) { /*antes 1400px*/
     .main{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 1fr auto;
+        grid-template-rows: 210px 1fr;
         grid-template-areas: 
-        "texto texto"
-        "grafUmid grafUmid"
-        "Api Api"
+        "texto Api"
+        "grafUmid Api"
+        "grafUmid2 Api"
+        "grafUmid3 Api"
+        "grafUmid4 Api"
+        /*"Api Api"*/
         ;
     }
 }
@@ -325,8 +361,12 @@ body{
         grid-template-areas:
         "texto"
         "grafUmid"
+        "grafUmid2"
+        "grafUmid3"
+        "grafUmid4"
         "Api"
-        "Api";
+        "Api"
+        ;
     }
 
     .TempDonut{
