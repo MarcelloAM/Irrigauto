@@ -13,7 +13,7 @@ refTemperatura.on("value", (snapshot) => {
     console.log("Dados recuperados:", data);
     
     // Exemplo de exibição no HTML
-    document.getElementById("saidaTemperatura").textContent = ultimoValor;
+    document.getElementById("saidaTemperatura").textContent = ultimoValor + " °C";
     
 });
 
