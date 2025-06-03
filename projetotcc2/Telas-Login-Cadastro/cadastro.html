@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="cadastro.css"/>
+  <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png"/>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <a href="login.html"><span class="seta">&#129120;</span></a>
+        <h1 class="titulo-cadastro">Cadastro</h1>
+      </div>
+      <form>
+        <label>Primeiro Nome</label>
+        <input type="text" id="primeiro-nome" placeholder="Insira seu nome." />
+
+        <label>Último nome</label>
+        <input type="text" id="ultimo-nome" placeholder="Insira seu último nome." />
+
+        <label>Email</label>
+        <input type="email" id="email-cadastro" placeholder="Insira seu email." />
+
+        <label>Senha</label>
+        <input type="password" id="senha-cadastro" placeholder="Crie uma senha." />
+
+        <label>Confirmar senha</label>
+        <input type="password" id="confirmar-senha" placeholder="Confirme a senha." />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+      <p class="login-link">Possui uma conta? <a href="login.html">Entrar</a></p>
+    </div>
+  </div>  
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
+<script src="../scripts/firebase/auth/firebase-init.js"></script>
+
+</html>

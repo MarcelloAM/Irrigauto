@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #d9f0bd;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-container {
+    background-color: #fefbea;
+    width: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    }
+  
+  .card-top {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 120px; 
+  }
+  
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .card-form {
+    background-color: #005c3c;
+    padding: 30px 20px;
+    color: white;
+    border-top-left-radius: 80px;
+  }
+  
+  .card-form h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    text-shadow: 1px 1px #000;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #c5d6c5;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #fefbea;
+    font-size: 16px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #c5d6c5;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #58b37a;
+  }
+  
+  .btn-entrar {
+    background-color: #0d8050;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-cadastro {
+    background-color: #00452d;
+    padding: 12px 120px 12px 120px;
+    border-radius: 10px;
+    border: none;
+    color: #c5d6c5;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .link-cadastro {
+    text-align: left;
+    font-size: 16px;
+    color: #b7d9c5;
+  }
+  
+  .btn-cadastro a{
+    text-decoration: none;
+    color: white;
+  }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png"/>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="card-top">
+      <img src="../assets/folhaSemFundo2.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="card-form">
+      <h1>Bem vindo!</h1>
+      <form>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="" required>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="manter-conectado">
+          <label for="manter-conectado">Manter Conectado</label>
+        </div>
+
+        <button type="submit" class="btn-entrar">Entrar</button>
+        <a href="cadastro.html"><button type="button" class="btn-cadastro">Cadastrar</button></a>     
+      </form>
+    </div>
+  </div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
+<script src="../scripts/firebase/auth/firebase-init.js"></script>
+
+</html>

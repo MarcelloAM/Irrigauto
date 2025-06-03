@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--fonteLetra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--apiweather-->
+    <script src="apiScript.js"></script>
+    
+
+</head>
+
+<body>
+    <div class="conteiner">
+        <div id="header" class="box">
+            <div id="botaoMenu" onclick="toggleSidebar()" class="botaoheader"><span class="material-icons">menu</span>
+            </div>
+            <div class="userIcon"><img class="imgUser" src="../assets/user.png" alt="imgUser"></div>
+            <div class="textUser">
+                <a href="#">
+                    <p>Calebe <br> Manaus,Amazonas</p>
+                </a>
+            </div>
+        </div> <!--navi-->
+        <div>
+            <aside id="sidebar" class="box">
+                <div class="sidebarmenu">
+                    <div class="logo"> <!--irrigauto-->
+                        <img src="../assets/folhaSemFundo2.png" alt="icon" id="iconfolha">
+                        <h1>Irrigauto</h1>
+
+                    </div>
+                    <nav>
+                        <div class="menudash">
+
+                            <ul>
+                                <li>
+                                    <a href="index.html" id="TelaAtual"><span
+                                            class="material-icons">window</span>Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="../tela-umidade/umidade.html" class="linkEx"><span
+                                            class="material-icons">water_drop</span>Umidade</a>
+                                </li>
+                                <li>
+                                    <a href="../tela-temperatura/temperatura.html" class="linkEx"><span
+                                            class="material-icons">device_thermostat</span>Temperatura</a>
+                                </li>
+                                <li>
+                                    <a href="../tela-historico/historico.html" class="linkEx"><span
+                                            class="material-icons">schedule</span>Histórico</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="logoff">
+                        <a href="../Telas-Login-Cadastro/login.html">
+                            <h1><span class="material-icons">login</span>Log Out</h1>
+                        </a>
+                    </div>
+                </div>
+            </aside><!--sidebar-->
+        </div>
+        <main class="main">
+            <div id="grafTemp" class="box">
+                <div class="TempText">
+                    <h2>Temperatura monday </h2>
+                    <div id="temperatura-text">
+                        <h2 id="saidaTemperatura"></h2>
+                        <h2>°C</h2>
+                    </div>
+                </div>
+
+                <div class="TempDonut">
+                    <canvas id="meuGraficoDeRosca"></canvas>
+                    <script src="chart.main.js"></script>
+                </div>
+            </div>
+            <div id="grafUmid" class="box">
+                <div class="UmidText">
+                    <h2>Umidade monday</h2>
+                    <div id="umidade-text">
+                        <h2 id="saidaUmidade"></h2>
+                        <h2>%</h2>
+                    </div>
+                </div>
+                <div class="UmidDonut">
+                    <canvas id="meuSegundoGraficoDeRosca"></canvas>
+                    <script src="chart.main2.js"></script>
+                </div>
+            </div>
+            <div id="grafico" class="box">
+                <div class="UmidTempText">
+                    <h2>Análise de Umidade<br>e Temperatura</h2>
+                </div>
+                <div class="divBarra">
+                    <canvas id="meuGraficoDeBarras"></canvas>
+                    <script src="graph.js"></script>
+                </div>
+            </div>
+            <div id="Api" class="box">
+                <!--
+                    <div class="regiao">
+                    <h1>Manaus</h1>
+                </div>
+                <div class="clima">
+                    <h2>35 °C</h2>
+                </div>
+                <div class="imgClima">
+                    <div>
+                        <img class="nuvem" src="nuvens-e-sol.png" alt="nuvem">
+                    </div>
+                </div>
+                -->
+
+                <div class="weather-container">
+                    <div class="upper-box-city">
+                        <input class="input-city" placeholder="Digite o nome da cidade">
+                        <button class="button-search" onclick="clickButton()">
+                            <img class="img-search" src="https://www.svgrepo.com/show/488200/find.svg" alt="Search">
+                        </button>
+                        <div class="medium-box-city">
+                            <h2 class="city">Informe um dado</h2>
+
+                            <p class="city-temp">Temperatura: none</p>
+                            <p class="city-humidity">Umidade: none</p>
+
+                            <div class="lower-box-city"> <!--caixa menor-->
+                                <img class="img-weather" alt="icon-info-weather"
+                                    src="https://openweathermap.org/img/wn/04n.png">
+                                <p class="text-weather">none</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-database-compat.js"></script>
+
+    <script src="../scripts/firebase/firebase-init-um-temp-hist.js"></script>
+    <script src="../scripts/script.js"></script>
+
+
+
+</body>
+
+</html>
