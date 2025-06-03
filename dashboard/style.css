@@ -1,0 +1,428 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    list-style-type: none
+}
+
+p{
+    font-size: small;
+}
+
+a{
+    color: black;
+}
+
+:root{
+
+    --cor1: white;
+    --cor2: rgba(19, 51, 34, 1);
+    --cor3: rgb(83, 117, 58);
+    --cor4: rgb(139, 166, 152);
+}
+
+body{
+    background-color: var(--cor1);
+    height: 100dvb;
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    ;
+    height: 100dvb;
+}
+
+.main{
+    grid-area: main;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 210px auto;
+    grid-template-areas:
+    "grafTemp grafUmid Api"
+    "grafico grafico Api"
+    ;
+    gap: 20px 20px;
+}
+
+#header{
+    display: flex;
+    grid-area: header;
+    border-radius: 0px;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.botaoheader{
+    display: flex;
+    margin: 20px;
+}
+
+#menuconteiner{
+    height: 40px;
+    width: 40px;
+    
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+.imgUser{
+    height: 40px;
+    width: 40px;
+}
+
+.headerBox{
+    
+}
+
+.sidebarmenu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    border-radius: 0px;
+    background-color: var(--cor2);
+    height: 100dvh;
+    width: 250px;
+}
+
+.sidebarmenu a, .sidebarmenu h1{
+    color: var(--cor1);
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+
+#iconfolha{
+    padding-right: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+.menudash {
+    display: flex;
+    justify-content: center;
+}
+
+.menudash li{
+    padding: 5px;
+}
+
+.material-icons{
+    padding-right: 5px;
+
+}
+
+#TelaAtual{
+    display: flex;
+    color: rgb(83, 117, 58);
+}
+
+.menudash .linkEx{
+    text-decoration: none;
+    color: rgb(139, 166, 152);
+    display: flex;
+}
+
+.menudash .linkEx:hover,#TelaAtual:hover{
+    color: white;
+}
+
+.logoff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    height: 100px;
+    border-top: 1px solid white;
+}
+
+.logoff .material-icons{
+    transform: translateY(4px)
+}
+
+
+#grafUmid{
+    grid-area: grafUmid;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+    .UmidText{
+        grid-area: UmidText;
+        align-self: flex-start;
+    }
+
+    .UmidDonut{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+#grafTemp{
+    grid-area: grafTemp;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+    .TempText{
+        grid-area: TempText;
+        display: flex;
+        flex-flow: column nowrap;
+        align-self: flex-start;
+    }
+
+    #temperatura-text{
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: large;
+        justify-content: flex-start;
+    }
+
+    #umidade-text{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+
+
+
+    .TempDonut{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+#grafico{
+    grid-area: grafico;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+    .UmidTempText{
+    
+    }
+
+    .divBarra{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    }
+
+#Api{
+    grid-area: Api;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://picsum.photos/1920/1080');
+}
+
+/* start api weather */
+
+
+.upper-box-city{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding: 20px;
+    width: 90%; /*antes 95*/
+    max-width: 450px;
+}
+
+.input-city{
+    
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px; /*antes 18px*/
+    background-color: #7c7c7c2b;
+    color: #ffffff;
+    width: calc(100% -70px);
+}
+
+.button-search{
+    display: flex; /*adicao do display flex*/
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #7c7c7c2b;
+    cursor: pointer;
+    float: right;
+}
+
+.img-search{
+    width: 20px;
+}
+
+.medium-box-city{
+    margin-top: 30px;
+}
+
+.city{
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.city-temp{
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.lower-box-city{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.text-weather{
+    color: #ffffff;
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+.city-humidity{
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* end api weather */
+
+.box{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#botaoMenu {
+    display: none;
+}
+
+@media (max-width: 1440px) { /*adicao de outra media*/
+    .input-city{
+    font-size: 12px; 
+    }
+
+    .img-search{
+        width: 15px;
+    }
+
+    .city{
+        font-size: 20px;
+    }
+
+    .city-temp{
+    font-size: 15px;
+    }
+
+    .city-humidity{
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 1320px) { /*antes 1400px*/
+    .main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 210px 1fr auto;
+        grid-template-areas: 
+        "grafTemp grafUmid"
+        "grafico grafico"
+        "Api Api"
+        ;
+    }
+}
+
+
+ @media (max-width: 1010px){
+
+    #sidebar{
+        height: 100dvb;
+        
+    }
+    #header{
+        
+    }
+    .conteiner{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 60px 1fr;
+        grid-template-areas: 
+        "sidebar"
+        "header"
+        "main"
+        ;
+    }
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-areas: 
+        "grafTemp"
+        "grafUmid"
+        "grafico"
+        "Api";
+    }
+
+    .TempDonut{
+        align-items: flex-end;
+        justify-content: end;
+    }
+
+    .UmidDonut{
+        align-items: flex-end;
+        justify-content: end;
+    }
+
+    #grafico{
+        padding-bottom: 60px;
+    }
+
+    aside{
+        position: fixed;
+        height: 100dvh;
+        width: 250px;
+        display: none;
+    }
+
+    .show{
+        display: block;
+    }
+
+    #botaoMenu{
+        display: block;
+    }
+    
+ }
