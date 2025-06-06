@@ -25,7 +25,10 @@
             <div id="botaoMenu" onclick="toggleSidebar()" class="botaoheader"><span class="material-icons">menu</span></div>
                 <div class="userIcon"><img class="imgUser" src="../assets/user.png" alt="imgUser"></div>
                 <div class="textUser">
-                <a href="#" ><p>Calebe <br> Manaus,Amazonas</p></a>
+                <a href="#" >
+                    <p id="nomeUsuarioLogado">Carregando... </p>
+                    <p>Manaus,Amazonas</p>
+                </a>
             </div>
         </div> <!--navi-->
         <div>
@@ -90,7 +93,10 @@
 
     
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-database-compat.js"></script>
+
+    <script type="module" src="../scripts/firebase/recuperaNome/recuperaNome-firebase.js"></script>
     
     <script type="module" src="../scripts/firebase/firebase-historico.js"></script>
     

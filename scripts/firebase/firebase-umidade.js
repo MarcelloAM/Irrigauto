@@ -19,6 +19,8 @@ refUmidade.on("value", (snapshot) => {
 
     // Exemplo de exibição no HTML
     document.getElementById("saidaUmidade").textContent = ultimoValor + " %";
+
+    criarOuAtualizarGraficoUmidade(ultimoValor);
 });
 
 refUltimasUmidades.on("value", (snapshot) => {

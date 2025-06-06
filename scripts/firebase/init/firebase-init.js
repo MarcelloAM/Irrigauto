@@ -1,14 +1,25 @@
 const firebaseConfig = {
-        apiKey: "AIzaSyCnZwEWoH2mB7kP22VWpk6Yg0e1wSVM7nY",
-        authDomain: "teste-eps32.firebaseapp.com",
-        databaseURL: "https://teste-eps32-default-rtdb.firebaseio.com",
-        projectId: "teste-eps32",
-        storageBucket: "teste-eps32.firebasestorage.app",
-        messagingSenderId: "305904811162",
-        appId: "1:305904811162:web:8002a05558d53b68267323",
-        measurementId: "G-KSGTZGKCDD"
+
+  apiKey: "AIzaSyDkZBFL_-AUVHGrNyIhFSXw1eTgxCTLeQs",
+
+  authDomain: "irrigauto-5a18d.firebaseapp.com",
+
+  databaseURL: "https://irrigauto-5a18d-default-rtdb.firebaseio.com",
+
+  projectId: "irrigauto-5a18d",
+
+  storageBucket: "irrigauto-5a18d.firebasestorage.app",
+
+  messagingSenderId: "773813072842",
+
+  appId: "1:773813072842:web:53fd58a4abb3ad214e5533",
+
+  measurementId: "G-PTLYLF73P5"
+
 };
 
+
 const app = firebase.initializeApp(firebaseConfig);
+
 
 export default app;
