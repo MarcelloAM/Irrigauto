@@ -1,5 +1,6 @@
-import firebaseApp from './init/firebase-init.js';
+import { initFirebaseCompat } from './init/firebase-init.js';
 
+await initFirebaseCompat();
 
 var db = firebase.database();
 var refTemperatura = db.ref("sensor/temperatura/");

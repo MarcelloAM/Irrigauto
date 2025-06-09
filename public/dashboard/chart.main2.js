@@ -1,9 +1,9 @@
-let meuGraficoDeRosca = null; 
+let meuSegundoGraficoDeRosca = null; 
 
-function criarOuAtualizarGraficoTemperatura(valorTemperatura) {
+function criarOuAtualizarGraficoUmidade(valorUmidade) {
     // Garante que o valor seja um número
-    const valorNumerico = parseInt(valorTemperatura);
-    const ctx2 = document.getElementById('meuGraficoDeRosca');
+    const valorNumerico = parseInt(valorUmidade);
+    const ctx2 = document.getElementById('meuSegundoGraficoDeRosca');
     
 
     const dataParaGrafico = {
@@ -11,15 +11,14 @@ function criarOuAtualizarGraficoTemperatura(valorTemperatura) {
             data: [valorNumerico, 100 - valorNumerico],
             backgroundColor: [
                 'rgb(19, 51, 34)',
-                'rgb(83, 117, 58)'  // Um cinza claro para o restante
+                'rgb(83, 117, 58)'  
             ],
            
         }]
     };
 
-    // Se o gráfico ainda não foi criado, crie-o
-    if (!meuGraficoDeRosca) {
-        meuGraficoDeRosca = new Chart(ctx2.getContext('2d'), {
+    if (!meuSegundoGraficoDeRosca) {
+        meuSegundoGraficoDeRosca = new Chart(ctx2.getContext('2d'), {
             type: 'doughnut',
             data: dataParaGrafico,
             options: {
@@ -27,14 +26,14 @@ function criarOuAtualizarGraficoTemperatura(valorTemperatura) {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false // Esconde a legenda
+                        display: false 
                     }
                 }
             }
         });
     } else {
         // Se o gráfico já existe, apenas atualize os dados
-        meuGraficoDeRosca.data.datasets[0].data = dataParaGrafico.datasets[0].data;
-        meuGraficoDeRosca.update();
+        meuSegundoGraficoDeRosca.data.datasets[0].data = dataParaGrafico.datasets[0].data;
+        meuSegundoGraficoDeRosca.update();
     }
 }

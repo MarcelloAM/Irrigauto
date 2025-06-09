@@ -1,54 +1,52 @@
-import firebaseApp from './init/firebase-init.js';
+import { initFirebaseCompat } from './init/firebase-init.js';
 
+await initFirebaseCompat();
 
 var db = firebase.database();
 var refTemperatura = db.ref("sensor/temperatura/");
-var refUmidade = db.ref("sensor/umidade/");
-var refHistorico = db.ref("historico/");
 
-const refUltimasUmidades = db.ref("sensor/umidade/").orderByKey().limitToLast(10);
+const refUltimasTemperaturas = db.ref("sensor/temperatura/").orderByKey().limitToLast(10);
 
-refUmidade.on("value", (snapshot) => {
+refTemperatura.on("value", (snapshot) => {
     const data = snapshot.val();
     const numeros = Object.keys(data);
     const ultimaChave = numeros[numeros.length -1];
     const ultimoValor = data[ultimaChave];
-
     console.log("Dados recuperados:", data);
     
-
     // Exemplo de exibição no HTML
-    document.getElementById("saidaUmidade").textContent = ultimoValor + " %";
+    document.getElementById("saidaTemperatura").textContent = ultimoValor + " °C";
 
-    criarOuAtualizarGraficoUmidade(ultimoValor);
+    criarOuAtualizarGraficoTemperatura(ultimoValor);
+    
 });
 
-refUltimasUmidades.on("value", (snapshot) => {
+refUltimasTemperaturas.on("value", (snapshot) => {
     
     if (snapshot.exists()) {
-        const umidadesArray = [];
+        const temperaturasArray = [];
     
         snapshot.forEach((childSnapshot) => {
-            umidadesArray.push(childSnapshot.val());
+            temperaturasArray.push(childSnapshot.val());
         });
 
-        let mediaUmidade = 0.0;
-        let somaUmidades = 0;
+        let mediaTemperatura = 0.0;
+        let somaTemperaturas = 0;
 
-        if (umidadesArray.length === 0) {
+        if (temperaturasArray.length === 0) {
             console.log("Nenhum dado encontrado");
         } else {
-            umidadesArray.forEach((umidadeValor) => {
-                somaUmidades += umidadeValor;
+            temperaturasArray.forEach((temperaturaValor) => {
+                somaTemperaturas += temperaturaValor;
             });
         }
         
-        mediaUmidade =   somaUmidades / umidadesArray.length;
+        mediaTemperatura =   somaTemperaturas / temperaturasArray.length;
         
-        console.log("Leituras de umidade consideradas:", umidadesArray);
-        console.log(Math.round(mediaUmidade));
+        console.log("Leituras de umidade consideradas:", temperaturasArray);
+        console.log(Math.round(mediaTemperatura));
 
-        document.getElementById("mediaUmidade").textContent = Math.round(mediaUmidade)+" %";
+        document.getElementById("mediaTemperatura").textContent = Math.round(mediaTemperatura)+"°C";
 
     }
     
