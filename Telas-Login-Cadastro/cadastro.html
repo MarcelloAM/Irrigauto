@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro</title>
   <link rel="stylesheet" href="cadastro.css"/>
-  <link rel="shortcut icon" type="image/jpg" href="./atualizado/folhaSemFundo2.png"/>
-  <script src="script.js"></script>
+  <link rel="shortcut icon" type="image/jpg" href="../assets/folhaSemFundo2.png"/>
 </head>
 <body>
   <div class="container">
     <div class="card">
       <div class="header">
-        <a href="login.html"><span class="seta">&#129120;</span></a>
+        <a href="../index.html"><span class="seta">&#129120;</span></a>
         <h1 class="titulo-cadastro">Cadastro</h1>
       </div>
       <form>
@@ -33,13 +32,15 @@
 
         <button type="submit">Cadastrar</button>
       </form>
-      <p class="login-link">Possui uma conta? <a href="login.html">Entrar</a></p>
+      <p class="login-link">Possui uma conta? <a href="../index.html">Entrar</a></p>
     </div>
   </div>  
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
-<script src="../scripts/firebase/auth/firebase-init.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-database-compat.js"></script>
+
+<script type="module" src="../scripts/firebase/cadastro/cadastro-firebase.js"></script>
 
 </html>

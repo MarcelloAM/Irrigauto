@@ -14,6 +14,8 @@ refTemperatura.on("value", (snapshot) => {
     
     // Exemplo de exibição no HTML
     document.getElementById("saidaTemperatura").textContent = ultimoValor + " °C";
+
+    criarOuAtualizarGraficoTemperatura(ultimoValor);
     
 });
 

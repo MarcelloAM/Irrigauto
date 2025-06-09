@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="login.css">
-  <link rel="shortcut icon" type="image/jpg" href="./atualizado/folhaSemFundo2.png"/>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="Telas-Login-Cadastro/login.css">
+  <link rel="shortcut icon" type="image/jpg" href="assets/folhaSemFundo2.png"/>
+  <script src="scripts/firebase/login/login-firebase.js"></script>
 </head>
 <body>
   <div class="login-container">
     <div class="card-top">
-      <img src="atualizado/folhaSemFundo2.png" alt="Logo" class="logo-img">
+      <img src="assets/folhaSemFundo2.png" alt="Logo" class="logo-img">
     </div>
     <div class="card-form">
       <h1>Bem vindo!</h1>
@@ -28,7 +28,7 @@
         </div>
 
         <button type="submit" class="btn-entrar">Entrar</button>
-        <a href="cadastro.html"><button type="button" class="btn-cadastro">Cadastrar</button></a>     
+        <a href="Telas-Login-Cadastro/cadastro.html"><button type="button" class="btn-cadastro">Cadastrar</button></a>     
       </form>
     </div>
   </div>
@@ -36,6 +36,6 @@
 
 <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
-<script src="../scripts/firebase/auth/firebase-init.js"></script>
+<script type="module"src="scripts/firebase/init/firebase-init.js"></script>
 
 </html>
