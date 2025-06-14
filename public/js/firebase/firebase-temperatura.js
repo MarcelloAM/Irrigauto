@@ -3,53 +3,68 @@ import { initFirebaseCompat } from './init/firebase-init.js';
 await initFirebaseCompat();
 
 var db = firebase.database();
-var refTemperatura = db.ref("sensor/temperatura/");
 
-const refUltimasTemperaturas = db.ref("sensor/temperatura/").orderByKey().limitToLast(10);
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+    
+        console.log("Usuário logado encontrado. UID:", user.uid);
+   
+        const uid = user.uid;
+        const refTemperatura = db.ref('users/' + uid + '/sensor/temperatura');
 
-refTemperatura.on("value", (snapshot) => {
-    const data = snapshot.val();
-    const numeros = Object.keys(data);
-    const ultimaChave = numeros[numeros.length -1];
-    const ultimoValor = data[ultimaChave];
-    console.log("Dados recuperados:", data);
-    
-    // Exemplo de exibição no HTML
-    document.getElementById("saidaTemperatura").textContent = ultimoValor + " °C";
+        refTemperatura.on("value", (snapshot) => {
+            const data = snapshot.val();
+            const numeros = Object.keys(data);
+            const ultimaChave = numeros[numeros.length -1];
+            const ultimoValor = data[ultimaChave];
+            console.log("Dados recuperados:", data);
+            
+            // Exemplo de exibição no HTML
+            document.getElementById("saidaTemperatura").textContent = Math.round(ultimoValor) + " °C";
 
-    criarOuAtualizarGraficoTemperatura(ultimoValor);
-    
-});
-
-refUltimasTemperaturas.on("value", (snapshot) => {
-    
-    if (snapshot.exists()) {
-        const temperaturasArray = [];
-    
-        snapshot.forEach((childSnapshot) => {
-            temperaturasArray.push(childSnapshot.val());
+            criarOuAtualizarGraficoTemperatura(ultimoValor);
+            
         });
-
-        let mediaTemperatura = 0.0;
-        let somaTemperaturas = 0;
-
-        if (temperaturasArray.length === 0) {
-            console.log("Nenhum dado encontrado");
-        } else {
-            temperaturasArray.forEach((temperaturaValor) => {
-                somaTemperaturas += temperaturaValor;
-            });
-        }
-        
-        mediaTemperatura =   somaTemperaturas / temperaturasArray.length;
-        
-        console.log("Leituras de umidade consideradas:", temperaturasArray);
-        console.log(Math.round(mediaTemperatura));
-
-        document.getElementById("mediaTemperatura").textContent = Math.round(mediaTemperatura)+"°C";
-
     }
-    
+});
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log("Usuário logado encontrado. UID:", user.uid);
+
+        const uid = user.uid;
+        const refUltimasTemperaturas = db.ref('users/' + uid + '/sensor/temperatura').orderByKey().limitToLast(10);
+
+        refUltimasTemperaturas.on("value", (snapshot) => {
+            
+            if (snapshot.exists()) {
+                const temperaturasArray = [];
+            
+                snapshot.forEach((childSnapshot) => {
+                    temperaturasArray.push(childSnapshot.val());
+                });
+
+                let mediaTemperatura = 0.0;
+                let somaTemperaturas = 0;
+
+                if (temperaturasArray.length === 0) {
+                    console.log("Nenhum dado encontrado");
+                } else {
+                    temperaturasArray.forEach((temperaturaValor) => {
+                        somaTemperaturas += temperaturaValor;
+                    });
+                }
+                
+                mediaTemperatura =   somaTemperaturas / temperaturasArray.length;
+                
+                console.log("Leituras de umidade consideradas:", temperaturasArray);
+                console.log(Math.round(mediaTemperatura));
+
+                document.getElementById("mediaTemperatura").textContent = Math.round(mediaTemperatura)+"°C";
+
+            }
+            
+        });
+    }
 });
 
 

@@ -4,38 +4,9 @@ await initFirebaseCompat();
 
 
 var db = firebase.database();
-var refTemperatura = db.ref("sensor/temperatura/");
-var refUmidade = db.ref("sensor/umidade/");
-var refHistorico = db.ref("historico/");
 
 const listaHistoricoContainer = document.getElementById('lista-historico-container');
 const itemTemplate = document.getElementById('historico-item-template');
-
-refTemperatura.on("value", (snapshot) => {
-    const data = snapshot.val();
-    const numeros = Object.keys(data);
-    const ultimaChave = numeros[numeros.length -1];
-    const ultimoValor = data[ultimaChave];
-    console.log("Dados recuperados:", data);
-    
-    // Exemplo de exibição no HTML
-    document.getElementById("saidaTemperatura").textContent = ultimoValor;
-    
-});
-
-
-refUmidade.on("value", (snapshot) => {
-    const data = snapshot.val();
-    const numeros = Object.keys(data);
-    const ultimaChave = numeros[numeros.length -1];
-    const ultimoValor = data[ultimaChave];
-
-    console.log("Dados recuperados:", data);
-    
-
-    // Exemplo de exibição no HTML
-    document.getElementById("saidaUmidade").textContent = ultimoValor;
-});
 
 
 function parseValorHistorico(valorString) {
@@ -93,44 +64,53 @@ function parseValorHistorico(valorString) {
     }
 }
 
-refHistorico.orderByKey().limitToLast(20).on("value", (snapshot) => {
-    listaHistoricoContainer.innerHTML = ''; 
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log("Usuário logado encontrado. UID:", user.uid);
 
-    if (!snapshot.exists()) {
-        listaHistoricoContainer.textContent = 'Nenhum histórico encontrado.';
-        console.log("Nenhum dado no snapshot.");
-        return;
-    }
+        const uid = user.uid;
+        const refHistorico = db.ref('users/' + uid + '/historico');
 
-    const itemsParaExibir = [];
-    snapshot.forEach((childSnapshot) => {
-        // childSnapshot.val() é a string "Mensagem! DD/MM/YYYY HH:MM:SS"
-        itemsParaExibir.push(childSnapshot.val());
-    });
+        refHistorico.orderByKey().limitToLast(20).on("value", (snapshot) => {
+            listaHistoricoContainer.innerHTML = ''; 
 
-   
-    itemsParaExibir.reverse();
+            if (!snapshot.exists()) {
+                listaHistoricoContainer.textContent = 'Nenhum histórico encontrado.';
+                console.log("Nenhum dado no snapshot.");
+                return;
+            }
 
-    itemsParaExibir.forEach(valorString => {
-        const dadosFormatados = parseValorHistorico(valorString);
+            const itemsParaExibir = [];
+            snapshot.forEach((childSnapshot) => {
+                // childSnapshot.val() e a string "Mensagem! DD/MM/YYYY HH:MM:SS"
+                itemsParaExibir.push(childSnapshot.val());
+            });
 
-        const templateClone = itemTemplate.content.cloneNode(true);
-
-        templateClone.querySelector(".historicoOrderData").textContent = dadosFormatados.data;
-        templateClone.querySelector(".historicoOrderHora").textContent = dadosFormatados.hora;
-        templateClone.querySelector(".historicoOrderStatus").textContent = dadosFormatados.status;
-        templateClone.querySelector(".saidaUmidade").textContent = dadosFormatados.umidade;
-        templateClone.querySelector(".saidaTemperatura").textContent = dadosFormatados.temperatura;
         
-        templateClone.querySelector(".saidaUmidade").textContent = dadosFormatados.umidade || 'Umidade: --';
-        templateClone.querySelector(".saidaTemperatura").textContent = dadosFormatados.temperatura || 'Temp.: --';
+            itemsParaExibir.reverse();
 
-        listaHistoricoContainer.appendChild(templateClone);
-    });
+            itemsParaExibir.forEach(valorString => {
+                const dadosFormatados = parseValorHistorico(valorString);
 
-    console.log("Dados recuperados e exibidos.");
+                const templateClone = itemTemplate.content.cloneNode(true);
 
-}, (error) => {
-    console.error("Erro ao buscar dados do Firebase: ", error);
-    listaHistoricoContainer.textContent = 'Erro ao carregar histórico.';
+                templateClone.querySelector(".historicoOrderData").textContent = dadosFormatados.data;
+                templateClone.querySelector(".historicoOrderHora").textContent = dadosFormatados.hora;
+                templateClone.querySelector(".historicoOrderStatus").textContent = dadosFormatados.status;
+                templateClone.querySelector(".saidaUmidade").textContent = dadosFormatados.umidade;
+                templateClone.querySelector(".saidaTemperatura").textContent = dadosFormatados.temperatura;
+                
+                templateClone.querySelector(".saidaUmidade").textContent = dadosFormatados.umidade+" %" || 'Umidade: --';
+                templateClone.querySelector(".saidaTemperatura").textContent = dadosFormatados.temperatura+" °C" || 'Temp.: --';
+
+                listaHistoricoContainer.appendChild(templateClone);
+            });
+
+            console.log("Dados recuperados e exibidos.");
+
+        }, (error) => {
+            console.error("Erro ao buscar dados do Firebase: ", error);
+            listaHistoricoContainer.textContent = 'Erro ao carregar histórico.';
+        });
+    }
 });
