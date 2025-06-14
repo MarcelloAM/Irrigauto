@@ -22,7 +22,12 @@ firebase.auth().onAuthStateChanged((user) => {
             
 
             // Exemplo de exibição no HTML
-            document.getElementById("saidaUmidade").textContent = ultimoValor + " %" || '0 %' ;
+            if(ultimoValor){
+                document.getElementById("saidaUmidade").textContent = ultimoValor + " %";
+            }else{
+                document.getElementById("saidaUmidade").textContent = "0 %";
+            }
+            
 
             criarOuAtualizarGraficoUmidade(ultimoValor);
         });
@@ -60,8 +65,13 @@ firebase.auth().onAuthStateChanged((user) => {
                 
                 console.log("Leituras de umidade consideradas:", umidadesArray);
                 console.log(Math.round(mediaUmidade));
-
-                document.getElementById("mediaUmidade").textContent = Math.round(mediaUmidade)+" %" || 'Nenhum dado encontrado';
+                
+                if(mediaUmidade){
+                    document.getElementById("mediaUmidade").textContent = Math.round(mediaUmidade)+" %";
+                }else{
+                    document.getElementById("mediaUmidade").textContent = 'Nenhum dado encontrado';
+                }
+                
 
             }
             
