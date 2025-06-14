@@ -22,7 +22,7 @@ firebase.auth().onAuthStateChanged((user) => {
             
 
             // Exemplo de exibição no HTML
-            if(ultimoValor){
+            if(ultimoValor!=null){
                 document.getElementById("saidaUmidade").textContent = ultimoValor + " %";
             }else{
                 document.getElementById("saidaUmidade").textContent = "0 %";
@@ -66,7 +66,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 console.log("Leituras de umidade consideradas:", umidadesArray);
                 console.log(Math.round(mediaUmidade));
                 
-                if(mediaUmidade){
+                if(mediaUmidade!=null){
                     document.getElementById("mediaUmidade").textContent = Math.round(mediaUmidade)+" %";
                 }else{
                     document.getElementById("mediaUmidade").textContent = 'Nenhum dado encontrado';

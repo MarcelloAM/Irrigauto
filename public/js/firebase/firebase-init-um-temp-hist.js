@@ -19,10 +19,10 @@ firebase.auth().onAuthStateChanged((user) => {
             console.log("Dados recuperados:", data);
             
             // Exemplo de exibição no HTML
-            if(ultimoValor){
-                document.getElementById("saidaTemperatura").textContent = Math.round(ultimoValor) + " °C";
+            if(ultimoValor !=null){
+                document.getElementById("saidaTemperatura").textContent = Math.round(ultimoValor);
             }else{
-                document.getElementById("saidaTemperatura").textContent = '0 °C';
+                document.getElementById("saidaTemperatura").textContent = '0';
             }
 
             criarOuAtualizarGraficoTemperatura(ultimoValor);
@@ -48,10 +48,10 @@ firebase.auth().onAuthStateChanged((user) => {
             console.log("Dados recuperados:", data);
             
 
-            if(ultimoValor){
-                document.getElementById("saidaUmidade").textContent = ultimoValor + " %";
+            if(ultimoValor!=null){
+                document.getElementById("saidaUmidade").textContent = ultimoValor;
             }else{
-                document.getElementById("saidaUmidade").textContent = "0 %";
+                document.getElementById("saidaUmidade").textContent = "0";
             }
 
             criarOuAtualizarGraficoUmidade(ultimoValor);
