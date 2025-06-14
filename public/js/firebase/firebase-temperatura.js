@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged((user) => {
             console.log("Dados recuperados:", data);
             
             // Exemplo de exibição no HTML
-            document.getElementById("saidaTemperatura").textContent = Math.round(ultimoValor) + " °C";
+            document.getElementById("saidaTemperatura").textContent = Math.round(ultimoValor) + " °C" || '0 °C';
 
             criarOuAtualizarGraficoTemperatura(ultimoValor);
             
@@ -59,7 +59,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 console.log("Leituras de umidade consideradas:", temperaturasArray);
                 console.log(Math.round(mediaTemperatura));
 
-                document.getElementById("mediaTemperatura").textContent = Math.round(mediaTemperatura)+"°C";
+                document.getElementById("mediaTemperatura").textContent = Math.round(mediaTemperatura)+"°C"||'Nenhum dado encontrado';
 
             }
             
