@@ -245,7 +245,7 @@ body{
     outline: none;
     padding: 10px;
     border-radius: 25px;
-    font-size: 16px; /*antes 18px*/
+    font-size: 12px; /*antes 16px*/
     background-color: #7c7c7c2b;
     color: #ffffff;
     width: calc(100% -70px);
@@ -262,7 +262,7 @@ body{
 }
 
 .img-search{
-    width: 20px;
+    width: 15px; /*antes 20px*/
 }
 
 .medium-box-city{
@@ -271,12 +271,12 @@ body{
 
 .city{
     color: #ffffff;
-    font-size: 28px;
+    font-size: 20px; /*antes 28px*/
     font-weight: 300;
 }
 
 .city-temp{
-    font-size: 20px;
+    font-size: 15px; /*20px*/
     color: #ffffff;
     margin-top: 20px;
 }
@@ -294,37 +294,15 @@ body{
 }
 
 .city-humidity{
-    font-size: 20px;
+    font-size: 15px; /*antes 20px*/
     color: #ffffff;
     margin-top: 20px;
 }
 
 /* end api weather */
 
- @media (max-width: 1440px) { /*adicao de outra media*/
-    .input-city{
-    font-size: 12px; 
-    }
 
-    .img-search{
-        width: 15px;
-    }
-
-    .city{
-        font-size: 20px;
-    }
-
-    .city-temp{
-    font-size: 15px;
-    }
-
-    .city-humidity{
-        font-size: 15px;
-    }
-}
-
-
-@media (max-width: 1320px) { /*antes 1400px*/
+@media (max-width: 1400px) { /*antes 1320*/
     .main{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 210px 1fr;
@@ -340,7 +318,7 @@ body{
 }
 
 
- @media (max-width: 1010px){
+ @media (max-width: 1040px){ /*antes 1010px*/
 
     #sidebar{
         height: 100dvb;

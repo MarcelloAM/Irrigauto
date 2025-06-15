@@ -43,7 +43,7 @@ body{
     grid-area: main;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 210px auto;
     grid-template-areas:
     "grafTemp grafUmid Api"
@@ -168,8 +168,15 @@ body{
 }
 
     .UmidText{
-        grid-area: UmidText;
+        display: flex;
+        flex-flow: column nowrap;
         align-self: flex-start;
+    }
+
+    #umidade-text{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
     }
 
     .UmidDonut{
@@ -178,6 +185,11 @@ body{
         height: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    #meuGraficoDeRosca{
+        width: 100%;
+        height: 100%;
     }
 
 #grafTemp{
@@ -192,7 +204,6 @@ body{
 }
 
     .TempText{
-        grid-area: TempText;
         display: flex;
         flex-flow: column nowrap;
         align-self: flex-start;
@@ -205,13 +216,6 @@ body{
         justify-content: flex-start;
     }
 
-    #umidade-text{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-    }
-
-
 
     .TempDonut{
         display: flex;
@@ -220,6 +224,11 @@ body{
         justify-content: center;
         align-items: center;
         
+    }
+
+    #meuSegundoGraficoDeRosca{
+        height: 100%;
+        width: 100%;
     }
 
 #grafico{
@@ -266,7 +275,7 @@ body{
     outline: none;
     padding: 10px;
     border-radius: 25px;
-    font-size: 16px; /*antes 18px*/
+    font-size: 12px; /*antes 16px*/
     background-color: #7c7c7c2b;
     color: #ffffff;
     width: calc(100% -70px);
@@ -283,7 +292,7 @@ body{
 }
 
 .img-search{
-    width: 20px;
+    width: 15px; /*antes 20px*/
 }
 
 .medium-box-city{
@@ -292,12 +301,12 @@ body{
 
 .city{
     color: #ffffff;
-    font-size: 28px;
+    font-size: 20px; /*antes 28px*/
     font-weight: 300;
 }
 
 .city-temp{
-    font-size: 20px;
+    font-size: 15px; /*antes 20px*/
     color: #ffffff;
     margin-top: 20px;
 }
@@ -315,7 +324,7 @@ body{
 }
 
 .city-humidity{
-    font-size: 20px;
+    font-size: 15px; /*antes 20px*/
     color: #ffffff;
     margin-top: 20px;
 }
@@ -332,32 +341,10 @@ body{
     display: none;
 }
 
-@media (max-width: 1440px) { /*adicao de outra media*/
-    .input-city{
-    font-size: 12px; 
-    }
 
-    .img-search{
-        width: 15px;
-    }
-
-    .city{
-        font-size: 20px;
-    }
-
-    .city-temp{
-    font-size: 15px;
-    }
-
-    .city-humidity{
-        font-size: 15px;
-    }
-}
-
-
-@media (max-width: 1320px) { /*antes 1400px*/
+@media (max-width: 1400px) { /*antes 1320*/
     .main{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2,1fr);
         grid-template-rows: 210px 1fr auto;
         grid-template-areas: 
         "grafTemp grafUmid"
@@ -368,7 +355,7 @@ body{
 }
 
 
- @media (max-width: 1010px){
+ @media (max-width: 1040px){ /*antes 1010px*/
 
     #sidebar{
         height: 100dvb;
