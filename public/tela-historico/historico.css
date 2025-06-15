@@ -59,9 +59,14 @@ body{
     padding: 0px 20px;
 }
 
-.botaoheader{
-    display: flex;
+.botaoheader .material-icons{
     margin: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    background-color: white;
+    cursor: pointer;
+    position: relative;
 }
 
 #menuconteiner{
@@ -88,7 +93,7 @@ body{
     grid-area: sidebar;
     border-radius: 0px;
     background-color: var(--cor2);
-    height: 100dvh;
+    height: 100%; /*antes 100dvh*/
     width: 250px;
 }
 
@@ -201,8 +206,7 @@ body{
             grid-area: historicoInfoUmidade;
         }
         .historicoInfoTemperatura{
-            grid-area: historicoInfoTemperatura;
-            
+            grid-area: historicoInfoTemperatura; 
         }
 
     .historicoOrder{
@@ -222,7 +226,7 @@ body{
 
 /*fim historico*/
 
-@media (max-width: 1010px){
+@media (max-width: 1040px){ /*antes 1010px*/
 
     .sidebarmenu{
         height: 100%;
@@ -258,4 +262,29 @@ body{
         display: block;
     }
     
+}
+/*adicao de nova media*/
+@media (max-width: 768px){
+
+        .historicoInfoData{
+            font-size: 10px;
+        }
+
+        .historicoInfoHora{
+            font-size: 10px;
+        }
+
+        .historicoInfoStatus{
+            font-size: 10px;
+        }
+        .historicoInfoUmidade{
+            font-size: 10px;
+        }
+        .historicoInfoTemperatura{
+            font-size: 10px;
+        }
+
+    body{
+        min-width: 344px;
+    }
 }

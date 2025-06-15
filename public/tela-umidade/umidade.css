@@ -63,9 +63,14 @@ body{
     padding: 0px 20px;
 }
 
-.botaoheader{
-    display: flex;
+.botaoheader .material-icons{
     margin: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    background-color: white;
+    cursor: pointer;
+    position: relative;
 }
 
 #menuconteiner{
@@ -87,7 +92,7 @@ body{
     grid-area: sidebar;
     border-radius: 0px;
     background-color: var(--cor2);
-    height: 100dvh;
+    height: 100%; /*antes 100dvh*/
     width: 250px;
 }
 
