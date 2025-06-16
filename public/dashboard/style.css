@@ -360,7 +360,7 @@ body{
 }
 
 
- @media (max-width: 1040px){ /*antes 1010px*/
+ @media (max-width: 1100px){ /*antes 1040px*/
 
     #sidebar{
         height: 100dvb;
