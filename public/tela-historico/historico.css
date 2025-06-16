@@ -284,6 +284,28 @@ body{
             font-size: 10px;
         }
 
+        
+
+        .historicoOrderData{
+            font-size: 10px;
+        }
+
+        .historicoOrderHora{
+            font-size: 10px;
+        }
+
+        .historicoOrderStatus{
+            font-size: 10px;
+        }
+
+        .saidaUmidade{
+            font-size: 10px;
+        }
+
+        .saidaTemperatura{
+            font-size: 10px;
+        }
+
     body{
         min-width: 344px;
     }
