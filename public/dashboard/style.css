@@ -194,7 +194,7 @@ body{
 
     #meuGraficoDeRosca{
         max-width: 200px;
-        height: 100%;
+        max-height: 200px;
     }
 
 #grafTemp{
@@ -232,7 +232,7 @@ body{
     }
 
     #meuSegundoGraficoDeRosca{
-        height: 100%;
+        max-height: 200px;
         max-width: 200px;
     }
 
