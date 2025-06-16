@@ -193,7 +193,7 @@ body{
     }
 
     #meuGraficoDeRosca{
-        width: 100%;
+        max-width: 200px;
         height: 100%;
     }
 
@@ -233,7 +233,7 @@ body{
 
     #meuSegundoGraficoDeRosca{
         height: 100%;
-        width: 100%;
+        max-width: 200px;
     }
 
 #grafico{
