@@ -47,8 +47,8 @@ body{
     grid-template-rows: 210px 210px auto;
     grid-template-areas:
     "texto texto Api"
-    "grafTemp grafTemp2 Api"
-    "grafTemp3 grafTemp4 Api"
+    "grafTemp . Api"
+    ". . Api"
     ;
     gap: 20px 20px;
 }
@@ -189,36 +189,6 @@ body{
         align-items: center;
         
     }
-#grafTemp2{
-    grid-area: grafTemp2;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    
-}
-#grafTemp3{
-    grid-area: grafTemp3;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    
-}
-#grafTemp4{
-    grid-area: grafTemp4;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    
-}
 /* end dos sensores */
 
 
@@ -320,9 +290,6 @@ body{
         grid-template-areas: 
         "texto Api"
         "grafTemp Api"
-        "grafTemp2 Api"
-        "grafTemp3 Api"
-        "grafTemp4 Api"
         /*"Api Api"*/
         ;
     }
@@ -346,14 +313,10 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-rows: repeat(2,240px) 500px;
         grid-template-areas:
         "texto"
         "grafTemp"
-        "grafTemp2"
-        "grafTemp3"
-        "grafTemp4"
-        "Api"
         "Api"
         ;
     }

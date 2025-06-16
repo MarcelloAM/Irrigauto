@@ -47,8 +47,8 @@ body{
     grid-template-rows: 210px 210px auto;
     grid-template-areas:
     "texto texto Api"
-    "grafUmid grafUmid2 Api"
-    "grafUmid3 grafUmid4 Api"
+    "grafUmid . Api"
+    ". . Api"
     
     ;
     gap: 20px 20px;
@@ -314,9 +314,6 @@ body{
         grid-template-areas: 
         "texto Api"
         "grafUmid Api"
-        "grafUmid2 Api"
-        "grafUmid3 Api"
-        "grafUmid4 Api"
         /*"Api Api"*/
         ;
     }
@@ -340,14 +337,10 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,240px) 500px;
+        grid-template-rows: repeat(2,240px) 500px;
         grid-template-areas:
         "texto"
         "grafUmid"
-        "grafUmid2"
-        "grafUmid3"
-        "grafUmid4"
-        "Api"
         "Api"
         ;
     }
