@@ -416,5 +416,19 @@ body{
     #botaoMenu{
         display: block;
     }
+
+
+
+    #grafTemp h2{
+        font-size: 16px;
+    }
+
+    #grafUmid h2{
+        font-size: 16px;
+    }
+
+    #grafico h2{
+        font-size: 16px;
+    }
     
  }
