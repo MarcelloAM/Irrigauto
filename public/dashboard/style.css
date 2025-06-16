@@ -243,9 +243,8 @@ body{
     flex-direction: column;
 }
 
-    #meuGraficoDeBarras{
-        min-width: 734px;
-        min-height: 367px;
+    .UmidTempText{
+    
     }
 
     .divBarra{
@@ -381,7 +380,7 @@ body{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2,240px) auto 500px; /*antes repeat(3,240px) 500px*/
+        grid-template-rows: repeat(3,240px) 500px;
         grid-template-areas: 
         "grafTemp"
         "grafUmid"
@@ -402,13 +401,6 @@ body{
     #grafico{
         padding-bottom: 60px;
     }
-    
-    /*
-    #meuGraficoDeBarras{
-        min-width: auto;
-        min-height: auto;
-    }
-    */
 
     aside{
         position: fixed;
